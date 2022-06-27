@@ -98,7 +98,6 @@ function buildCharts(sample) {
 
     // 1. Create the trace for the bubble chart.
     var bubbleData = [{
-      type: "scatter",
       x: otu_ids,
       y: sample_values,
       text: otu_labels,
@@ -114,9 +113,6 @@ function buildCharts(sample) {
     var bubbleLayout = {
       title: "Bacteria Cultures Per Sample",
       xaxis: {title: "OTU ID"},
-      yaxis: {title: "QTY"},
-      plot_bgcolor: 'rgba(0,0,0,0)',
-      paper_bgcolor: 'rgba(0,0,0,0)',
       hovermode: "closest"
     };
 
