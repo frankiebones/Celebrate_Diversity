@@ -103,8 +103,8 @@ function buildCharts(sample) {
       text: otu_labels,
       mode: "markers",
       marker: {
-        color: sample_values,
-        size: otu_ids,
+        color: otu_ids,
+        size: sample_values,
         colorscale: 'Earth'
       }
     }];
