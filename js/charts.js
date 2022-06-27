@@ -90,8 +90,8 @@ function buildCharts(sample) {
       title: "Top Ten Bacterial Strains",
       xaxis: {title: "Sample Values"},
       yaxis: {title: "ID's"},
-      plot_bgcolor: 'rgb(192,192,192)',
-      paper_bgcolor: 'rgb(192,192,192)'
+      plot_bgcolor: 'rgba(0,0,0,0)',
+      paper_bgcolor: 'rgba(0,0,0,0)'
     };
     
     // 10. Use Plotly to plot the data with the layout. 
