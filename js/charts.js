@@ -70,10 +70,21 @@ function buildCharts(sample) {
     var otu_labels = sampleResult.otu_labels;
     var sample_values = sampleResult.sample_values;
 
+    var metaArray = data.metadata;
+    // 4. Create a variable that filters the samples for the object with the desired sample number.
+    var metaSample = metaArray.filter(metaObj => metaObj.id == sample);
+    //  5. Create a variable that holds the first sample in the array.
+    var metaResult = metaSample[0];
+
+    var washFreq = metaResult.wfreq;
+    var wfreq = parseFloat(washFreq);
+    
+    console.log(wfreq);
+
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last. 
-    var yticks = otu_ids.slice(0,10).map(ids => `OTU ${ids}`).reverse();
+    var yticks = otu_ids.slice(0,10).map(ids => `OTU ${ids} `).reverse();
 
     // 8. Create the trace for the bar chart. 
     var barData = [{
@@ -119,9 +130,7 @@ function buildCharts(sample) {
     // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
 
-    var washFreq = sampleResult.wfreq;
-    var wfreq = parseFloat(washFreq);
-    console.log(wfreq);
+    
 
     // 4. Create the trace for the gauge chart.
     var gaugeData = [{
@@ -140,18 +149,17 @@ function buildCharts(sample) {
         steps: [
           { range: [0,2], color: "GreenYellow" },
           { range: [2,4], color: "Chartreuse" },
-          { range: [4,6], color: "LawnGreen" },
-          { range: [6,8], color: "Lime" },
-          { range: [8,10], color: "LimeGreen" }
+          { range: [4,6], color: "Lime" },
+          { range: [6,8], color: "LimeGreen" },
+          { range: [8,10], color: "Green" }
         ]
       }
     }];
     
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { 
-      width: 400, 
-      height: 200.
-      
+      width: 500, 
+      height: 500
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
