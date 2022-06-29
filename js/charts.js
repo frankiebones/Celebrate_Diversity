@@ -92,7 +92,8 @@ function buildCharts(sample) {
       x: sample_values.slice(0,10).reverse(),
       y: yticks,
       text: otu_labels.slice(0,10).reverse(),
-      orientation: "h"
+      orientation: "h",
+      marker: { color: "LawnGreen" }
     }];
     
     // 9. Create the layout for the bar chart. 
@@ -143,15 +144,16 @@ function buildCharts(sample) {
         axis: { 
           range: [null, 10],
           tickwidth: 1,
-          tickcolor: "Peru"  
+          tickcolor: "Black"  
         }, 
-        bgcolor: "Peru",
+        bgcolor: "Black",
+        bar: { color: "Black" },
         steps: [
-          { range: [0,2], color: "GreenYellow" },
-          { range: [2,4], color: "Chartreuse" },
-          { range: [4,6], color: "Lime" },
-          { range: [6,8], color: "LimeGreen" },
-          { range: [8,10], color: "Green" }
+          { range: [0,2], color: "BlanchedAlmond" },
+          { range: [2,4], color: "NavajoWhite" },
+          { range: [4,6], color: "BurlyWood" },
+          { range: [6,8], color: "Peru" },
+          { range: [8,10], color: "SaddleBrown" }
         ]
       }
     }];
