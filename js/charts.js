@@ -145,7 +145,7 @@ function buildCharts(sample) {
     var gaugeLayout = { 
       width: 400, 
       height: 200.
-      paper_bgcolor: "saddlebrown"
+      paper_bgcolor: "rgb(101, 67, 33)"
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
